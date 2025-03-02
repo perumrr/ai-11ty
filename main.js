@@ -5,8 +5,8 @@ document.addEventListener("alpine:init", () => {
         async init() {
             let res1 = await fetch("https://jsonplaceholder.typicode.com/posts/1");
             let res2 = await fetch("https://dummyjson.com/products/1");
-            this.firstEndpoint = await res1.json();
-            this.secondEndpoint = await res2.json();
+            this.firstEndpoint = (await res1.json()).title;
+            this.secondEndpoint = (await res2.json()).title;
         }
     }));
 });
